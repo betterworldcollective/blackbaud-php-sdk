@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Data;
+namespace Blackbaud\Data;
 
-use BlackbaudSdk\Contracts\Data;
+use Blackbaud\Contracts\Data;
 
 abstract class BaseData
 {

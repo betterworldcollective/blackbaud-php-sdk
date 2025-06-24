@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Requests\Gift;
+namespace Blackbaud\Requests\Gift;
 
-use BlackbaudSdk\Data\Gift\Gift;
+use Blackbaud\Data\Gift\Gift;
 use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

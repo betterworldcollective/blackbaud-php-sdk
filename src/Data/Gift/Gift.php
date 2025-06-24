@@ -1,14 +1,14 @@
 <?php
 
-namespace BlackbaudSdk\Data\Gift;
+namespace Blackbaud\Data\Gift;
 
-use BlackbaudSdk\Contracts\Data;
-use BlackbaudSdk\Data\BaseData;
-use BlackbaudSdk\Data\FuzzyDate;
-use BlackbaudSdk\Enums\GiftAidQualificationStatus;
-use BlackbaudSdk\Enums\GiftStatus;
-use BlackbaudSdk\Enums\GiftType;
-use BlackbaudSdk\Enums\PostStatus;
+use Blackbaud\Contracts\Data;
+use Blackbaud\Data\BaseData;
+use Blackbaud\Data\FuzzyDate;
+use Blackbaud\Enums\GiftAidQualificationStatus;
+use Blackbaud\Enums\GiftStatus;
+use Blackbaud\Enums\GiftType;
+use Blackbaud\Enums\PostStatus;
 use Carbon\CarbonImmutable;
 
 /**

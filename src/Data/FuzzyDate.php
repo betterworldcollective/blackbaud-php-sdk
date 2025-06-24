@@ -1,6 +1,6 @@
 <?php
 
-namespace BlackbaudSdk\Data;
+namespace Blackbaud\Data;
 
 use Carbon\CarbonImmutable;
 

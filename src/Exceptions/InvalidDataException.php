@@ -1,6 +1,6 @@
 <?php
 
-namespace BlackbaudSdk\Exceptions;
+namespace Blackbaud\Exceptions;
 
 use Exception;
 

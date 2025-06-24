@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Requests\Gift;
+namespace Blackbaud\Requests\Gift;
 
-use BlackbaudSdk\Resources\GiftResource;
+use Blackbaud\Resources\GiftResource;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

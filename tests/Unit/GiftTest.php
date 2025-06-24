@@ -1,9 +1,9 @@
 <?php
 
-use BlackbaudSdk\Blackbaud;
-use BlackbaudSdk\Data\Gift\Gift;
-use BlackbaudSdk\Enums\GiftPaymentMethod;
-use BlackbaudSdk\Enums\GiftType;
+use Blackbaud\Blackbaud;
+use Blackbaud\Data\Gift\Gift;
+use Blackbaud\Enums\GiftPaymentMethod;
+use Blackbaud\Enums\GiftType;
 
 $client = Blackbaud::oauth('client-id', 'client-secret', 'redirect-url', 'subscription-key');
 

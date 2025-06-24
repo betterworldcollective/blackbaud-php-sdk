@@ -16,12 +16,12 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "BlackbaudSdk\\": "src/"
+            "Blackbaud\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BlackbaudSdk\\Tests\\": "tests/"
+            "Blackbaud\\Tests\\": "tests/"
         }
     },
     "scripts": {

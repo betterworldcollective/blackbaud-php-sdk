@@ -1,7 +1,7 @@
 <?php
 
-use BlackbaudSdk\Blackbaud;
-use BlackbaudSdk\Data\Event\Event;
+use Blackbaud\Blackbaud;
+use Blackbaud\Data\Event\Event;
 
 $client = Blackbaud::oauth('client-id', 'client-secret', 'redirect-url', 'subscription-key');
 

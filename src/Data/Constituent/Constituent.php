@@ -1,11 +1,11 @@
 <?php
 
-namespace BlackbaudSdk\Data\Constituent;
+namespace Blackbaud\Data\Constituent;
 
-use BlackbaudSdk\Contracts\Data;
-use BlackbaudSdk\Data\BaseData;
-use BlackbaudSdk\Data\FuzzyDate;
-use BlackbaudSdk\Enums\ConstituentType;
+use Blackbaud\Contracts\Data;
+use Blackbaud\Data\BaseData;
+use Blackbaud\Data\FuzzyDate;
+use Blackbaud\Enums\ConstituentType;
 use Carbon\CarbonImmutable;
 
 /**

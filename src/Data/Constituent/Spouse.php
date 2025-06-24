@@ -1,9 +1,9 @@
 <?php
 
-namespace BlackbaudSdk\Data\Constituent;
+namespace Blackbaud\Data\Constituent;
 
-use BlackbaudSdk\Contracts\Data;
-use BlackbaudSdk\Data\BaseData;
+use Blackbaud\Contracts\Data;
+use Blackbaud\Data\BaseData;
 
 /**
  * @phpstan-type SpouseDataResponse array{

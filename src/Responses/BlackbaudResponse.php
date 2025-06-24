@@ -1,6 +1,6 @@
 <?php
 
-namespace BlackbaudSdk\Responses;
+namespace Blackbaud\Responses;
 
 use Saloon\Http\Response;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Requests\Constituent;
+namespace Blackbaud\Requests\Constituent;
 
-use BlackbaudSdk\Resources\ConstituentResource;
+use Blackbaud\Resources\ConstituentResource;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

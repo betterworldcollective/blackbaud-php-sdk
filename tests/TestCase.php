@@ -1,6 +1,6 @@
 <?php
 
-namespace BlackbaudSdk\Tests;
+namespace Blackbaud\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

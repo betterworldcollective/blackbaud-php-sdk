@@ -1,6 +1,6 @@
 <?php
 
-namespace BlackbaudSdk\Contracts;
+namespace Blackbaud\Contracts;
 
 interface Data
 {

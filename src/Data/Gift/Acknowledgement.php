@@ -1,10 +1,10 @@
 <?php
 
-namespace BlackbaudSdk\Data\Gift;
+namespace Blackbaud\Data\Gift;
 
-use BlackbaudSdk\Contracts\Data;
-use BlackbaudSdk\Data\BaseData;
-use BlackbaudSdk\Enums\GiftAcknowledgementStatus;
+use Blackbaud\Contracts\Data;
+use Blackbaud\Data\BaseData;
+use Blackbaud\Enums\GiftAcknowledgementStatus;
 use Carbon\CarbonImmutable;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Authentications;
+namespace Blackbaud\Authentications;
 
-use BlackbaudSdk\Blackbaud;
+use Blackbaud\Blackbaud;
 use Saloon\Helpers\OAuth2\OAuthConfig;
 use Saloon\Traits\OAuth2\AuthorizationCodeGrant;
 

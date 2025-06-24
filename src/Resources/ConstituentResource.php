@@ -1,12 +1,12 @@
 <?php
 
-namespace BlackbaudSdk\Resources;
+namespace Blackbaud\Resources;
 
-use BlackbaudSdk\Data\Constituent\Constituent;
-use BlackbaudSdk\Exceptions\InvalidDataException;
-use BlackbaudSdk\Requests\Constituent\CreateConstituent;
-use BlackbaudSdk\Requests\Constituent\GetConstituent;
-use BlackbaudSdk\Requests\Constituent\UpdateConstituent;
+use Blackbaud\Data\Constituent\Constituent;
+use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Requests\Constituent\CreateConstituent;
+use Blackbaud\Requests\Constituent\GetConstituent;
+use Blackbaud\Requests\Constituent\UpdateConstituent;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;

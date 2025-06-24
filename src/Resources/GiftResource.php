@@ -1,12 +1,12 @@
 <?php
 
-namespace BlackbaudSdk\Resources;
+namespace Blackbaud\Resources;
 
-use BlackbaudSdk\Data\Gift\Gift;
-use BlackbaudSdk\Exceptions\InvalidDataException;
-use BlackbaudSdk\Requests\Gift\CreateGift;
-use BlackbaudSdk\Requests\Gift\GetGift;
-use BlackbaudSdk\Requests\Gift\UpdateGift;
+use Blackbaud\Data\Gift\Gift;
+use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Requests\Gift\CreateGift;
+use Blackbaud\Requests\Gift\GetGift;
+use Blackbaud\Requests\Gift\UpdateGift;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;

@@ -1,6 +1,6 @@
 <?php
 
-namespace BlackbaudSdk\Enums;
+namespace Blackbaud\Enums;
 
 enum GiftPaymentMethod: string
 {

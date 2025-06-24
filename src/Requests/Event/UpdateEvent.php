@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Requests\Event;
+namespace Blackbaud\Requests\Event;
 
-use BlackbaudSdk\Resources\EventResource;
+use Blackbaud\Resources\EventResource;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

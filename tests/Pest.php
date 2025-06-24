@@ -1,14 +1,14 @@
 <?php
 
-use BlackbaudSdk\Requests\Constituent\CreateConstituent;
-use BlackbaudSdk\Requests\Constituent\GetConstituent;
-use BlackbaudSdk\Requests\Constituent\UpdateConstituent;
-use BlackbaudSdk\Requests\Event\CreateEvent;
-use BlackbaudSdk\Requests\Event\GetEvent;
-use BlackbaudSdk\Requests\Event\UpdateEvent;
-use BlackbaudSdk\Requests\Gift\CreateGift;
-use BlackbaudSdk\Requests\Gift\GetGift;
-use BlackbaudSdk\Requests\Gift\UpdateGift;
+use Blackbaud\Requests\Constituent\CreateConstituent;
+use Blackbaud\Requests\Constituent\GetConstituent;
+use Blackbaud\Requests\Constituent\UpdateConstituent;
+use Blackbaud\Requests\Event\CreateEvent;
+use Blackbaud\Requests\Event\GetEvent;
+use Blackbaud\Requests\Event\UpdateEvent;
+use Blackbaud\Requests\Gift\CreateGift;
+use Blackbaud\Requests\Gift\GetGift;
+use Blackbaud\Requests\Gift\UpdateGift;
 use Saloon\Config;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
@@ -41,7 +41,7 @@ MockClient::global([
 |
 */
 
-pest()->extend(BlackbaudSdk\Tests\TestCase::class)->in('Feature');
+pest()->extend(Blackbaud\Tests\TestCase::class)->in('Feature');
 
 /*
 |--------------------------------------------------------------------------

@@ -1,12 +1,12 @@
 <?php
 
-namespace BlackbaudSdk\Resources;
+namespace Blackbaud\Resources;
 
-use BlackbaudSdk\Data\Event\Event;
-use BlackbaudSdk\Exceptions\InvalidDataException;
-use BlackbaudSdk\Requests\Event\CreateEvent;
-use BlackbaudSdk\Requests\Event\GetEvent;
-use BlackbaudSdk\Requests\Event\UpdateEvent;
+use Blackbaud\Data\Event\Event;
+use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Requests\Event\CreateEvent;
+use Blackbaud\Requests\Event\GetEvent;
+use Blackbaud\Requests\Event\UpdateEvent;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;

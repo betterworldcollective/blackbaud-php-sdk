@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Requests\Constituent;
+namespace Blackbaud\Requests\Constituent;
 
-use BlackbaudSdk\Data\Constituent\Constituent;
+use Blackbaud\Data\Constituent\Constituent;
 use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

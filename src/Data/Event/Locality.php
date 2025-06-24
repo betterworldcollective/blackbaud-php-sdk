@@ -1,9 +1,9 @@
 <?php
 
-namespace BlackbaudSdk\Data\Event;
+namespace Blackbaud\Data\Event;
 
-use BlackbaudSdk\Contracts\Data;
-use BlackbaudSdk\Data\BaseData;
+use Blackbaud\Contracts\Data;
+use Blackbaud\Data\BaseData;
 
 /**
  * @phpstan-type LocalityResponseData array{

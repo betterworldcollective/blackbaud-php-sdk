@@ -1,8 +1,8 @@
 <?php
 
-namespace BlackbaudSdk\Requests\Event;
+namespace Blackbaud\Requests\Event;
 
-use BlackbaudSdk\Data\Event\Event;
+use Blackbaud\Data\Event\Event;
 use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

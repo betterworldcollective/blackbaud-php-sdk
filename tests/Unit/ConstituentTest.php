@@ -1,8 +1,8 @@
 <?php
 
-use BlackbaudSdk\Blackbaud;
-use BlackbaudSdk\Data\Constituent\Constituent;
-use BlackbaudSdk\Enums\ConstituentType;
+use Blackbaud\Blackbaud;
+use Blackbaud\Data\Constituent\Constituent;
+use Blackbaud\Enums\ConstituentType;
 
 $client = Blackbaud::oauth('client-id', 'client-secret', 'redirect-url', 'subscription-key');
 

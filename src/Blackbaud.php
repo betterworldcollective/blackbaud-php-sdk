@@ -1,13 +1,13 @@
 <?php
 
-namespace BlackbaudSdk;
+namespace Blackbaud;
 
-use BlackbaudSdk\Authentications\BlackbaudOAuth;
-use BlackbaudSdk\Authentications\BlackbaudToken;
-use BlackbaudSdk\Resources\ConstituentResource;
-use BlackbaudSdk\Resources\EventResource;
-use BlackbaudSdk\Resources\GiftResource;
-use BlackbaudSdk\Responses\BlackbaudResponse;
+use Blackbaud\Authentications\BlackbaudOAuth;
+use Blackbaud\Authentications\BlackbaudToken;
+use Blackbaud\Resources\ConstituentResource;
+use Blackbaud\Resources\EventResource;
+use Blackbaud\Resources\GiftResource;
+use Blackbaud\Responses\BlackbaudResponse;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 

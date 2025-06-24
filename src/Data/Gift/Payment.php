@@ -1,11 +1,11 @@
 <?php
 
-namespace BlackbaudSdk\Data\Gift;
+namespace Blackbaud\Data\Gift;
 
-use BlackbaudSdk\Contracts\Data;
-use BlackbaudSdk\Data\BaseData;
-use BlackbaudSdk\Data\FuzzyDate;
-use BlackbaudSdk\Enums\GiftPaymentMethod;
+use Blackbaud\Contracts\Data;
+use Blackbaud\Data\BaseData;
+use Blackbaud\Data\FuzzyDate;
+use Blackbaud\Enums\GiftPaymentMethod;
 use Carbon\CarbonImmutable;
 
 /**
