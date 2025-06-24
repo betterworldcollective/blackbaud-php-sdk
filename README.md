@@ -1,3 +1,3 @@
 # Blackbaud PHP SDK
 
-PHP Blackbaud API SDK powered by [Saloon](https://github.com/saloonphp/saloon).
+A work-in-progress PHP Blackbaud API SDK powered by [Saloon](https://github.com/saloonphp/saloon).
