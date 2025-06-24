@@ -1,0 +1,64 @@
+{
+  "statusCode" : 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Wed, 24 May 2023 06:23:45 GMT",
+    "Server": "Kestrel",
+    "Transfer-Encoding": "chunked",
+    "Request-Context": "appId=cid-v1:39afb11d-2dd4-4500-bcd3-01c7ce6a1b18"
+  },
+  "data": {
+    "id": "1140",
+    "acknowledgements": [{
+      "status": "ACKNOWLEDGED"
+    }],
+    "amount": {
+      "value": 250
+    },
+    "balance": {
+      "value": 0
+    },
+    "batch_number": "23",
+    "constituent_id": "190",
+    "date": "2009-03-12T00:00:00Z",
+    "date_added": "2002-03-12T14:01:44.227Z",
+    "date_modified": "2017-03-15T14:00:12.554Z",
+    "fundraisers": [{
+      "amount": {
+        "value": 250
+      },
+      "constituent_id": "236"
+    }],
+    "gift_code": "Delivered gift in person",
+    "gift_splits": [{
+      "id": "1123",
+      "amount": {
+        "value": 250
+      },
+      "appeal_id": "26",
+      "campaign_id": "4",
+      "fund_id": "25"
+    }],
+    "gift_status": "Active",
+    "is_anonymous": false,
+    "constituency": "Board Member",
+    "lookup_id": "800",
+    "payments": [{
+      "payment_method": "CreditCard"
+    }],
+    "post_date": "2009-03-12T00:00:00Z",
+    "post_status": "NotPosted",
+    "receipts": [{
+      "amount": {
+        "value": 30
+      },
+      "date": "2009-07-13T00:00:00Z",
+      "status": "RECEIPTED"
+    }],
+    "subtype": "Membership",
+    "type": "PledgePayment",
+    "linked_gifts": ["882"],
+    "gift_aid_qualification_status": "NotQualified"
+  }
+}
+

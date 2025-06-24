@@ -1,0 +1,85 @@
+{
+  "statusCode" : 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Wed, 24 May 2023 06:23:45 GMT",
+    "Server": "Kestrel",
+    "Transfer-Encoding": "chunked",
+    "Request-Context": "appId=cid-v1:39afb11d-2dd4-4500-bcd3-01c7ce6a1b18"
+  },
+  "data": {
+    "id": "280",
+    "address": {
+      "id": "757",
+      "address_lines": "410 17th Street",
+      "city": "Denver",
+      "constituent_id": "280",
+      "country": "United States",
+      "county": "Denver",
+      "do_not_mail": false,
+      "formatted_address": "410 17th Street\r\nDenver, CO  80202-4402",
+      "postal_code": "80202-4402",
+      "preferred": true,
+      "state": "CO",
+      "inactive": false,
+      "type": "Home"
+    },
+    "age": 54,
+    "birthdate": {
+      "d": 14,
+      "m": 3,
+      "y": 1961
+    },
+    "date_added": "1999-05-20T18:57:55Z",
+    "date_modified": "2016-07-14T04:13:51.2167803Z",
+    "deceased": false,
+    "email": {
+      "id": "283",
+      "address": "robertcarloshernandez@gmail.com",
+      "do_not_email": false,
+      "inactive": false,
+      "primary": false,
+      "type": "Email"
+    },
+    "first": "Robert",
+    "fundraiser_status": "Active",
+    "gender": "Male",
+    "gives_anonymously": false,
+    "inactive": false,
+    "is_constituent": true,
+    "last": "Hernandez",
+    "lookup_id": "96",
+    "middle": "Carlos",
+    "name": "Dr. Robert C. Hernandez",
+    "online_presence": {
+      "id": "811",
+      "address": "http://www.myspace.com/drbobhernandez",
+      "inactive": false,
+      "primary": false,
+      "type": "Web address"
+    },
+    "phone": {
+      "id": "95",
+      "do_not_call": false,
+      "inactive": false,
+      "number": "(303)-997-3301",
+      "primary": false,
+      "type": "Home"
+    },
+    "preferred_name": "Bob",
+    "spouse": {
+      "id": "410",
+      "first": "Wendy",
+      "last": "Hernandez",
+      "is_head_of_household": false
+    },
+    "title": "Dr.",
+    "type": "Individual",
+    "import_id": "1234-56-789101",
+    "is_memorial": false,
+    "is_solicitor": false,
+    "no_valid_address": true,
+    "requests_no_email": false
+  }
+}
+

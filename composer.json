@@ -1,0 +1,49 @@
+{
+    "name": "betterworldcollective/blackbaud-php-sdk",
+    "require": {
+        "php": "^8.2",
+        "saloonphp/saloon": "^3.0",
+        "illuminate/collections": "^12.19",
+        "illuminate/support": "^12.19"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.22",
+        "pestphp/pest": "^3.8",
+        "symfony/var-dumper": "^7.3",
+        "phpstan/phpstan": "^2.1",
+        "rector/rector": "^2.0"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "BlackbaudSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BlackbaudSdk\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "refactor": [
+            "./vendor/bin/rector process"
+        ],
+        "format": [
+            "./vendor/bin/pint --dirty"
+        ],
+        "format:test": [
+            "./vendor/bin/pint --dirty --test -v"
+        ],
+        "test": [
+            "./vendor/bin/pest"
+        ],
+        "analyse": [
+            "./vendor/bin/phpstan analyse --memory-limit=-1"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

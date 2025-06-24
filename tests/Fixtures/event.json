@@ -1,0 +1,66 @@
+{
+  "statusCode" : 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Wed, 24 May 2023 06:23:45 GMT",
+    "Server": "Kestrel",
+    "Transfer-Encoding": "chunked",
+    "Request-Context": "appId=cid-v1:39afb11d-2dd4-4500-bcd3-01c7ce6a1b18"
+  },
+  "data": {
+    "id": "1",
+    "category": {
+      "id": "1893",
+      "name": "Annual Fundraiser",
+      "inactive": false
+    },
+    "group": {
+      "id": "1505",
+      "name": "Walk-A-Thon for Relief",
+      "is_inactive": false
+    },
+    "location": {
+      "name": "Metropolitan Playground",
+      "address_lines": "1523 Colleton Avenue",
+      "postal_code": "29401",
+      "locality": {
+        "id": "413",
+        "name": "Charleston"
+      },
+      "administrative_area": {
+        "id": "607",
+        "name": "South Carolina",
+        "short_description": "SC"
+      },
+      "sub_administrative_area": {
+        "id": "714",
+        "name": "Charleston"
+      },
+      "country": {
+        "id": "540",
+        "display_name": "United States",
+        "iso_alpha2_code": "US"
+      },
+      "phone": "615-562-8745",
+      "contact": "Derrick Maynard",
+      "notes": "Please contact Derrick if there are any questions concerning the playground."
+    },
+    "date_added": "2017-09-15T01:00:00Z",
+    "date_modified": "2017-09-15T01:00:00Z",
+    "lookup_id": "WALK",
+    "name": "Walk-A-Thon",
+    "description": "This is a 5 kilometer walk that begins and ends at the International Conference Center.  There will be a closing ceremony concert performed by The Jazz Sons.  Proceeds from this year's walk-a-thon are designated for Disaster Relief.",
+    "start_date": "2008-06-26",
+    "start_time": "17:50",
+    "end_date": "2008-06-26",
+    "end_time": "12:00",
+    "inactive": false,
+    "capacity": 500,
+    "goal": 25000,
+    "campaign_id": "3",
+    "fund_id": "6",
+    "appeal_id": "7",
+    "package_id": "8"
+  }
+}
+
