@@ -7,6 +7,7 @@ use Blackbaud\Authentications\BlackbaudToken;
 use Blackbaud\Resources\ConstituentResource;
 use Blackbaud\Resources\EventResource;
 use Blackbaud\Resources\GiftResource;
+use Blackbaud\Resources\QueryResource;
 use Blackbaud\Responses\BlackbaudResponse;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
@@ -69,5 +70,10 @@ abstract class Blackbaud extends Connector
     public function event(): EventResource
     {
         return new EventResource($this);
+    }
+
+    public function tableQuery(): QueryResource
+    {
+        return new QueryResource($this);
     }
 }
