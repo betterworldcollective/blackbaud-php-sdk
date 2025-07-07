@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Event;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 
 /**
@@ -12,7 +11,7 @@ use Blackbaud\Data\BaseData;
  *     inactive?: bool|null
  * }
  */
-class EventCategory extends BaseData implements Data
+class EventCategory extends BaseData
 {
     public function __construct(
         public ?string $id = null,

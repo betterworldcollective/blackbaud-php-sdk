@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Enums\RecurringGiftFrequency;
 use Carbon\CarbonImmutable;
@@ -15,7 +14,7 @@ use Carbon\CarbonImmutable;
  *     next_transaction_date?: string|null
  * }
  */
-class RecurringGiftSchedule extends BaseData implements Data
+class RecurringGiftSchedule extends BaseData
 {
     public function __construct(
         public RecurringGiftFrequency $frequency,

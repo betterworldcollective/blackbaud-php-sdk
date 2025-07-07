@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Constituent;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Data\FuzzyDate;
 use Blackbaud\Enums\ConstituentType;
@@ -64,7 +63,7 @@ use Carbon\CarbonImmutable;
  *     online_presence?: OnlinePresenceDataResponse
  * }
  */
-class Constituent extends BaseData implements Data
+class Constituent extends BaseData
 {
     public function __construct(
         public string $id,

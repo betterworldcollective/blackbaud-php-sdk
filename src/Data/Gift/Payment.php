@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Data\FuzzyDate;
 use Blackbaud\Enums\GiftPaymentMethod;
@@ -21,7 +20,7 @@ use Carbon\CarbonImmutable;
  *     reference_date?: array{y: int, m: int, d: int}|null
  * }
  */
-class Payment extends BaseData implements Data
+class Payment extends BaseData
 {
     public function __construct(
         public GiftPaymentMethod $payment_method,

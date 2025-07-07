@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Enums\GiftAidQualificationStatus;
 
@@ -19,7 +18,7 @@ use Blackbaud\Enums\GiftAidQualificationStatus;
  *     package_id?: string|null
  * }
  */
-class GiftSplit extends BaseData implements Data
+class GiftSplit extends BaseData
 {
     public function __construct(
         public string $id,

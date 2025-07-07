@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 
 /**
@@ -14,7 +13,7 @@ use Blackbaud\Data\BaseData;
  *     gift_id?: string|null
  * }
  */
-class SoftCredit extends BaseData implements Data
+class SoftCredit extends BaseData
 {
     public function __construct(
         public ?float $amount = null,

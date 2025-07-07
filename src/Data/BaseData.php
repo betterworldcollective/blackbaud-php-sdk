@@ -4,10 +4,10 @@ namespace Blackbaud\Data;
 
 use Blackbaud\Contracts\Data;
 
-abstract class BaseData
+abstract class BaseData implements Data
 {
     /**
-     * @template TData of Data
+     * @template TData of BaseData
      *
      * @param  array<string, mixed>  $dataOrigin
      * @param  class-string<TData>  $dtoClass

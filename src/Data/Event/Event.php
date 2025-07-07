@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Event;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Carbon\CarbonImmutable;
 
@@ -34,7 +33,7 @@ use Carbon\CarbonImmutable;
  *     package_id?: string|null
  * }
  */
-class Event extends BaseData implements Data
+class Event extends BaseData
 {
     public function __construct(
         public string $id,

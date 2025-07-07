@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Constituent;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Carbon\CarbonImmutable;
 
@@ -18,7 +17,7 @@ use Carbon\CarbonImmutable;
  *     date_modified?: string|null
  * }
  */
-class OnlinePresence extends BaseData implements Data
+class OnlinePresence extends BaseData
 {
     public function __construct(
         public string $id,

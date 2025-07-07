@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Event;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 
 /**
@@ -25,7 +24,7 @@ use Blackbaud\Data\BaseData;
  *     notes?: string|null
  * }
  */
-class Location extends BaseData implements Data
+class Location extends BaseData
 {
     public function __construct(
         public ?string $name = null,

@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Constituent;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 
 /**
@@ -13,7 +12,7 @@ use Blackbaud\Data\BaseData;
  *     is_head_of_household: bool
  * }
  */
-class Spouse extends BaseData implements Data
+class Spouse extends BaseData
 {
     public function __construct(
         public string $id,

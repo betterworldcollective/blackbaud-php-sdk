@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Enums\GiftReceiptStatus;
 use Carbon\CarbonImmutable;
@@ -16,7 +15,7 @@ use Carbon\CarbonImmutable;
  *     status: string
  * }
  */
-class Receipt extends BaseData implements Data
+class Receipt extends BaseData
 {
     public function __construct(
         public float $amount,

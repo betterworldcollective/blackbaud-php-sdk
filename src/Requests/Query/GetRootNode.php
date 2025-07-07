@@ -29,7 +29,15 @@ class GetRootNode extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/query/querytypes/{$this->query_type_id->value}/availablefields?product={$this->product->value}&module={$this->module->value}";
+        return "/query/querytypes/{$this->query_type_id->value}/availablefields";
+    }
+
+    protected function defaultQuery(): array
+    {
+        return [
+            'product' => $this->product->value,
+            'module' => $this->module->value,
+        ];
     }
 
     /**

@@ -24,7 +24,7 @@ use Blackbaud\Enums\QueryValueType;
  *     summary_has_default_filters?: bool|null
  * }
  */
-class Field extends BaseData implements Data
+class Field extends BaseData
 {
     /**
      * @param  array<string>  $allowed_filter_operators

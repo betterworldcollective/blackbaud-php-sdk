@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Data\FuzzyDate;
 use Blackbaud\Enums\GiftAidQualificationStatus;
@@ -55,7 +54,7 @@ use Carbon\CarbonImmutable;
  *     subtype?: string|null
  * }
  */
-class Gift extends BaseData implements Data
+class Gift extends BaseData
 {
     /**
      * @param  array<Acknowledgement>  $acknowledgements

@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Enums\GiftAcknowledgementStatus;
 use Carbon\CarbonImmutable;
@@ -14,7 +13,7 @@ use Carbon\CarbonImmutable;
  *     status: string
  * }
  */
-class Acknowledgement extends BaseData implements Data
+class Acknowledgement extends BaseData
 {
     public function __construct(
         public GiftAcknowledgementStatus $status,

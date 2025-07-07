@@ -11,6 +11,7 @@ use Blackbaud\Enums\Resource;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Resources\ConstituentResource;
 use Blackbaud\Resources\EventResource;
+use Blackbaud\Resources\FundResource;
 use Blackbaud\Resources\GiftResource;
 use Blackbaud\Resources\QueryResource;
 use Blackbaud\Responses\BlackbaudResponse;
@@ -82,6 +83,11 @@ abstract class Blackbaud extends Connector
     public function tableQuery(): QueryResource
     {
         return new QueryResource($this);
+    }
+
+    public function fund(): FundResource
+    {
+        return new FundResource($this);
     }
 
     /**

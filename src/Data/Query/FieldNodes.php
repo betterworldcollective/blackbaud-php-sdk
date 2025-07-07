@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Query;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 
 /**
@@ -14,7 +13,7 @@ use Blackbaud\Data\BaseData;
  *     fields?: array<FieldDataResponse>|null,
  * }
  */
-class FieldNodes extends BaseData implements Data
+class FieldNodes extends BaseData
 {
     /**
      * @param  array<Node>  $nodes

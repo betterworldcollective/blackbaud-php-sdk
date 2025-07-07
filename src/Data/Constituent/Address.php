@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Constituent;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 use Blackbaud\Data\FuzzyDate;
 use Carbon\CarbonImmutable;
@@ -31,7 +30,7 @@ use Carbon\CarbonImmutable;
  *     end?: string|null
  * }
  */
-class Address extends BaseData implements Data
+class Address extends BaseData
 {
     public function __construct(
         public string $id,

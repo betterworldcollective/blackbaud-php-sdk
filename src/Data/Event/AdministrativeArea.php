@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Event;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 
 /**
@@ -12,7 +11,7 @@ use Blackbaud\Data\BaseData;
  *     short_description?: string|null
  * }
  */
-class AdministrativeArea extends BaseData implements Data
+class AdministrativeArea extends BaseData
 {
     public function __construct(
         public string $id,

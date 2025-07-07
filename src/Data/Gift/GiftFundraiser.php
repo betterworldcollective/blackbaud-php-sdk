@@ -2,7 +2,6 @@
 
 namespace Blackbaud\Data\Gift;
 
-use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
 
 /**
@@ -12,7 +11,7 @@ use Blackbaud\Data\BaseData;
  *     constituent_id: string,
  * }
  */
-class GiftFundraiser extends BaseData implements Data
+class GiftFundraiser extends BaseData
 {
     public function __construct(
         public float $amount,
