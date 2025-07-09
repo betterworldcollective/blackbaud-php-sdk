@@ -6,6 +6,7 @@ use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\Fundraiser\Fund;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Requests\Fundraising\GetAllFund;
+use Blackbaud\Requests\Fundraising\GetFund;
 use Carbon\CarbonImmutable;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
@@ -44,5 +45,21 @@ class FundResource extends BaseResource
         }
 
         return $funds;
+    }
+
+    /**
+     * @throws FatalRequestException
+     * @throws RequestException
+     * @throws InvalidDataException
+     */
+    public function get(int $id): Fund
+    {
+        $fund = $this->connector->send(new GetFund($id))->dto();
+
+        if (! $fund instanceof Fund) {
+            throw new InvalidDataException('Invalid data found.');
+        }
+
+        return $fund;
     }
 }
