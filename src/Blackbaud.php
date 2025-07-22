@@ -9,6 +9,8 @@ use Blackbaud\Data\Event\Event;
 use Blackbaud\Data\Gift\Gift;
 use Blackbaud\Enums\Resource;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Resources\ConstituentCustomFieldCategoryDetailResource;
+use Blackbaud\Resources\ConstituentCustomFieldResource;
 use Blackbaud\Resources\ConstituentResource;
 use Blackbaud\Resources\EventResource;
 use Blackbaud\Resources\FundResource;
@@ -68,6 +70,16 @@ abstract class Blackbaud extends Connector
     public function constituent(): ConstituentResource
     {
         return new ConstituentResource($this);
+    }
+
+    public function constituentCustomField(): ConstituentCustomFieldResource
+    {
+        return new ConstituentCustomFieldResource($this);
+    }
+
+    public function constituentCustomFieldCategoryDetail(): ConstituentCustomFieldCategoryDetailResource
+    {
+        return new ConstituentCustomFieldCategoryDetailResource($this);
     }
 
     public function gift(): GiftResource
