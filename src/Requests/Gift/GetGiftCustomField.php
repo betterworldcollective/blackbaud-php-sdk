@@ -1,6 +1,6 @@
 <?php
 
-namespace Blackbaud\Requests\Constituent;
+namespace Blackbaud\Requests\Gift;
 
 use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\CustomField\CustomField;
@@ -19,7 +19,7 @@ use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
  *     value: array<CustomFieldDataResponse>
  * }
  */
-class GetConstituentCustomField extends Request
+class GetGiftCustomField extends Request
 {
     use AlwaysThrowOnErrors;
 
@@ -29,7 +29,7 @@ class GetConstituentCustomField extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/constituent/v1/constituents/{$this->id}/customfields";
+        return "/gift/v1/gifts/{$this->id}/customfields";
     }
 
     /**

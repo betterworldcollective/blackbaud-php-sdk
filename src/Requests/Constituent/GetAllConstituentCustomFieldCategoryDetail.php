@@ -3,8 +3,7 @@
 namespace Blackbaud\Requests\Constituent;
 
 use Blackbaud\Data\ApiCollection;
-use Blackbaud\Data\Constituent\CustomField;
-use Blackbaud\Data\Constituent\CustomFieldCategoryDetail;
+use Blackbaud\Data\CustomField\CustomFieldCategoryDetail;
 use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -32,7 +31,7 @@ class GetAllConstituentCustomFieldCategoryDetail extends Request
     }
 
     /**
-     * @return ApiCollection<CustomField>
+     * @return ApiCollection<CustomFieldCategoryDetail>
      *
      * @throws JsonException
      */
@@ -41,6 +40,6 @@ class GetAllConstituentCustomFieldCategoryDetail extends Request
         /** @var ApiCollectionResponse $data */
         $data = $response->json();
 
-        return ApiCollection::from($data['value'], CustomField::class, $data['count'] ?? null, $data['next_link'] ?? null);
+        return ApiCollection::from($data['value'], CustomFieldCategoryDetail::class, $data['count'] ?? null, $data['next_link'] ?? null);
     }
 }

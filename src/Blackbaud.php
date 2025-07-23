@@ -14,6 +14,8 @@ use Blackbaud\Resources\ConstituentCustomFieldResource;
 use Blackbaud\Resources\ConstituentResource;
 use Blackbaud\Resources\EventResource;
 use Blackbaud\Resources\FundResource;
+use Blackbaud\Resources\GiftCustomFieldCategoryDetailResource;
+use Blackbaud\Resources\GiftCustomFieldResource;
 use Blackbaud\Resources\GiftResource;
 use Blackbaud\Resources\QueryResource;
 use Blackbaud\Responses\BlackbaudResponse;
@@ -85,6 +87,16 @@ abstract class Blackbaud extends Connector
     public function gift(): GiftResource
     {
         return new GiftResource($this);
+    }
+
+    public function giftCustomField(): GiftCustomFieldResource
+    {
+        return new GiftCustomFieldResource($this);
+    }
+
+    public function giftCustomFieldCategoryDetail(): GiftCustomFieldCategoryDetailResource
+    {
+        return new GiftCustomFieldCategoryDetailResource($this);
     }
 
     public function event(): EventResource

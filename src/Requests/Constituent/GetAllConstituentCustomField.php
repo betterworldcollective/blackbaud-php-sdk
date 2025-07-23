@@ -3,7 +3,7 @@
 namespace Blackbaud\Requests\Constituent;
 
 use Blackbaud\Data\ApiCollection;
-use Blackbaud\Data\Constituent\CustomField;
+use Blackbaud\Data\CustomField\CustomField;
 use Carbon\CarbonImmutable;
 use JsonException;
 use Saloon\Enums\Method;

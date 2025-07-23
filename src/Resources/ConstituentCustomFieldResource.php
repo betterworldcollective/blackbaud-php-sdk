@@ -3,7 +3,7 @@
 namespace Blackbaud\Resources;
 
 use Blackbaud\Data\ApiCollection;
-use Blackbaud\Data\Constituent\CustomField;
+use Blackbaud\Data\CustomField\CustomField;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Requests\Constituent\CreateConstituentCustomField;
 use Blackbaud\Requests\Constituent\GetAllConstituentCustomField;

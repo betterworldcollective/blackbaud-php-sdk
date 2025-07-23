@@ -5,12 +5,12 @@ namespace Blackbaud\Resources;
 use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\CustomField\CustomField;
 use Blackbaud\Exceptions\InvalidDataException;
-use Blackbaud\Requests\Constituent\GetAllConstituentCustomFieldCategoryDetail;
+use Blackbaud\Requests\Gift\GetAllGiftCustomFieldCategoryDetail;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 
-class ConstituentCustomFieldCategoryDetailResource extends BaseResource
+class GiftCustomFieldCategoryDetailResource extends BaseResource
 {
     /**
      * @return ApiCollection<CustomField>
@@ -21,7 +21,7 @@ class ConstituentCustomFieldCategoryDetailResource extends BaseResource
      */
     public function all(): ApiCollection
     {
-        $customFields = $this->connector->send(new GetAllConstituentCustomFieldCategoryDetail)->dto();
+        $customFields = $this->connector->send(new GetAllGiftCustomFieldCategoryDetail)->dto();
 
         if (! $customFields instanceof ApiCollection) {
             throw new InvalidDataException('Invalid data found.');

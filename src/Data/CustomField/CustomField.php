@@ -1,6 +1,6 @@
 <?php
 
-namespace Blackbaud\Data\Constituent;
+namespace Blackbaud\Data\CustomField;
 
 use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
