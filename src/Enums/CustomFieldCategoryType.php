@@ -11,4 +11,5 @@ enum CustomFieldCategoryType: string
     case CodeTableEntry = 'CodeTableEntry';
     case ConstituentId = 'ConstituentId';
     case FuzzyDate = 'FuzzyDate';
+    case Number = 'Number';
 }
