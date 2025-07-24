@@ -3,7 +3,7 @@
 namespace Blackbaud\Resources;
 
 use Blackbaud\Data\ApiCollection;
-use Blackbaud\Data\CustomField\CustomField;
+use Blackbaud\Data\CustomField\CustomFieldCategoryDetail;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Requests\Constituent\GetAllConstituentCustomFieldCategoryDetail;
 use Saloon\Exceptions\Request\FatalRequestException;
@@ -13,7 +13,7 @@ use Saloon\Http\BaseResource;
 class ConstituentCustomFieldCategoryDetailResource extends BaseResource
 {
     /**
-     * @return ApiCollection<CustomField>
+     * @return ApiCollection<CustomFieldCategoryDetail>
      *
      * @throws RequestException
      * @throws InvalidDataException
