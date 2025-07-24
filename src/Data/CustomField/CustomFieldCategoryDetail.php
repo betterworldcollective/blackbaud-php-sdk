@@ -4,6 +4,7 @@ namespace Blackbaud\Data\CustomField;
 
 use Blackbaud\Contracts\Data;
 use Blackbaud\Data\BaseData;
+use Blackbaud\Enums\CustomFieldCategoryType;
 
 /**
  * @phpstan-type CustomFieldCategoryDetailResponseData array{
@@ -17,7 +18,7 @@ class CustomFieldCategoryDetail extends BaseData implements Data
 {
     public function __construct(
         public string $name,
-        public string $type,
+        public CustomFieldCategoryType $type,
         public ?string $code_table_id = null,
         public ?bool $one_per_record = null,
     ) {}
@@ -29,7 +30,7 @@ class CustomFieldCategoryDetail extends BaseData implements Data
     {
         return new self(
             name: $data['name'],
-            type: $data['type'],
+            type: CustomFieldCategoryType::from($data['type']),
             code_table_id: $data['code_table_id'] ?? null,
             one_per_record: $data['one_per_record'] ?? null,
         );
