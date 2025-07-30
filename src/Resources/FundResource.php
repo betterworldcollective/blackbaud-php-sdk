@@ -4,12 +4,13 @@ namespace Blackbaud\Resources;
 
 use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\Fundraiser\Fund;
+use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Fundraising\GetAllFund;
 use Blackbaud\Requests\Fundraising\GetFund;
 use Carbon\CarbonImmutable;
-use Saloon\Exceptions\Request\FatalRequestException;
-use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 
 class FundResource extends BaseResource
@@ -17,9 +18,9 @@ class FundResource extends BaseResource
     /**
      * @return ApiCollection<Fund>
      *
-     * @throws RequestException
+     * @throws BadRequestException
+     * @throws UnauthorizedException
      * @throws InvalidDataException
-     * @throws FatalRequestException
      */
     public function all(
         ?CarbonImmutable $dateAdded = null,
@@ -48,8 +49,8 @@ class FundResource extends BaseResource
     }
 
     /**
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws ObjectNotFoundException
+     * @throws UnauthorizedException
      * @throws InvalidDataException
      */
     public function get(int $id): Fund
