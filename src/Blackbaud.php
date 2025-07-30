@@ -8,7 +8,10 @@ use Blackbaud\Data\Constituent\Constituent;
 use Blackbaud\Data\Event\Event;
 use Blackbaud\Data\Gift\Gift;
 use Blackbaud\Enums\Resource;
+use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Resources\ConstituentCustomFieldCategoryDetailResource;
 use Blackbaud\Resources\ConstituentCustomFieldResource;
 use Blackbaud\Resources\ConstituentResource;
@@ -19,10 +22,11 @@ use Blackbaud\Resources\GiftCustomFieldResource;
 use Blackbaud\Resources\GiftResource;
 use Blackbaud\Resources\QueryResource;
 use Blackbaud\Responses\BlackbaudResponse;
-use Saloon\Exceptions\Request\FatalRequestException;
-use Saloon\Exceptions\Request\RequestException;
+use DateTimeImmutable;
+use Saloon\Http\Auth\AccessTokenAuthenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
+use Throwable;
 
 abstract class Blackbaud extends Connector
 {
@@ -117,8 +121,8 @@ abstract class Blackbaud extends Connector
     /**
      * @param  array<string, mixed>  $properties
      *
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws BadRequestException
+     * @throws UnauthorizedException
      */
     public function create(Resource $resource, array $properties): int
     {
@@ -126,8 +130,8 @@ abstract class Blackbaud extends Connector
     }
 
     /**
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws ObjectNotFoundException
+     * @throws UnauthorizedException
      * @throws InvalidDataException
      */
     public function get(Resource $resource, int $id): Gift|Event|Constituent
@@ -138,8 +142,8 @@ abstract class Blackbaud extends Connector
     /**
      * @param  array<string, mixed>  $properties
      *
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws BadRequestException
+     * @throws UnauthorizedException
      */
     public function update(Resource $resource, int $id, array $properties): true
     {
@@ -153,5 +157,26 @@ abstract class Blackbaud extends Connector
             Resource::Gift => $this->gift(),
             Resource::Event => $this->event(),
         };
+    }
+
+    public function getRequestException(Response $response, ?Throwable $senderException): ?Throwable
+    {
+        return match ($response->status()) {
+            401 => new UnauthorizedException($response->json()['message']),
+            404 => new ObjectNotFoundException,
+            400 => new BadRequestException($response->json()),
+            default => $senderException,
+        };
+    }
+
+    public function authenticateWithToken(string $token, ?string $refreshToken = null, ?DateTimeImmutable $expiresAt = null): self
+    {
+        $authenticator = new AccessTokenAuthenticator(
+            $token,
+            $refreshToken,
+            $expiresAt,
+        );
+
+        return $this->authenticate($authenticator);
     }
 }

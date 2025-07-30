@@ -3,19 +3,20 @@
 namespace Blackbaud\Resources;
 
 use Blackbaud\Data\Gift\Gift;
+use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Gift\CreateGift;
 use Blackbaud\Requests\Gift\GetGift;
 use Blackbaud\Requests\Gift\UpdateGift;
-use Saloon\Exceptions\Request\FatalRequestException;
-use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 
 class GiftResource extends BaseResource
 {
     /**
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws ObjectNotFoundException
+     * @throws UnauthorizedException
      * @throws InvalidDataException
      */
     public function get(int $id): Gift
@@ -33,8 +34,8 @@ class GiftResource extends BaseResource
      * @param  array<string, mixed>  $properties
      * @return int The ID of the newly created gift returned by the API response
      *
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws BadRequestException
+     * @throws UnauthorizedException
      *
      * @see https://developer.sky.blackbaud.com/api#api=58bdd5edd7dcde06046081d6&operation=CreateGift List of available properties
      */
@@ -50,8 +51,8 @@ class GiftResource extends BaseResource
      * @param  array<string, mixed>  $properties
      * @return true if the update is successful, otherwise it will throw an exception
      *
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws BadRequestException
+     * @throws UnauthorizedException
      *
      * @see https://developer.sky.blackbaud.com/api#api=58bdd5edd7dcde06046081d6&operation=EditGift List of available properties
      */
