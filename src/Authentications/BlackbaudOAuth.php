@@ -3,9 +3,11 @@
 namespace Blackbaud\Authentications;
 
 use Blackbaud\Blackbaud;
+use DateTimeImmutable;
 use Saloon\Contracts\OAuthAuthenticator;
 use Saloon\Exceptions\InvalidStateException;
 use Saloon\Helpers\OAuth2\OAuthConfig;
+use Saloon\Http\Auth\AccessTokenAuthenticator;
 use Saloon\Traits\OAuth2\AuthorizationCodeGrant;
 
 class BlackbaudOAuth extends Blackbaud
@@ -53,5 +55,16 @@ class BlackbaudOAuth extends Blackbaud
     public function requestAccessTokenWithRefreshToken(string $refreshToken): OAuthAuthenticator
     {
         return $this->refreshAccessToken($refreshToken);
+    }
+
+    public function authenticateWithToken(string $token, ?string $refreshToken = null, ?DateTimeImmutable $expiresAt = null): self
+    {
+        $authenticator = new AccessTokenAuthenticator(
+            $token,
+            $refreshToken,
+            $expiresAt,
+        );
+
+        return $this->authenticate($authenticator);
     }
 }

@@ -22,8 +22,6 @@ use Blackbaud\Resources\GiftCustomFieldResource;
 use Blackbaud\Resources\GiftResource;
 use Blackbaud\Resources\QueryResource;
 use Blackbaud\Responses\BlackbaudResponse;
-use DateTimeImmutable;
-use Saloon\Http\Auth\AccessTokenAuthenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Throwable;
@@ -167,16 +165,5 @@ abstract class Blackbaud extends Connector
             400 => new BadRequestException($response->json()),
             default => $senderException,
         };
-    }
-
-    public function authenticateWithToken(string $token, ?string $refreshToken = null, ?DateTimeImmutable $expiresAt = null): self
-    {
-        $authenticator = new AccessTokenAuthenticator(
-            $token,
-            $refreshToken,
-            $expiresAt,
-        );
-
-        return $this->authenticate($authenticator);
     }
 }
