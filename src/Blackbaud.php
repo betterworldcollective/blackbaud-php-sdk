@@ -12,6 +12,7 @@ use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
 use Blackbaud\Exceptions\UnauthorizedException;
+use Blackbaud\Resources\ConstituentAddressResource;
 use Blackbaud\Resources\ConstituentAddressTypeResource;
 use Blackbaud\Resources\ConstituentCustomFieldCategoryDetailResource;
 use Blackbaud\Resources\ConstituentCustomFieldResource;
@@ -79,6 +80,11 @@ abstract class Blackbaud extends Connector
     public function constituent(): ConstituentResource
     {
         return new ConstituentResource($this);
+    }
+
+    public function constituentAddress(): ConstituentAddressResource
+    {
+        return new ConstituentAddressResource($this);
     }
 
     public function constituentAddressType(): ConstituentAddressTypeResource
