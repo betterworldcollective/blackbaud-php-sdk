@@ -12,8 +12,11 @@ use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
 use Blackbaud\Exceptions\UnauthorizedException;
+use Blackbaud\Resources\ConstituentAddressTypeResource;
 use Blackbaud\Resources\ConstituentCustomFieldCategoryDetailResource;
 use Blackbaud\Resources\ConstituentCustomFieldResource;
+use Blackbaud\Resources\ConstituentEmailAddressTypeResource;
+use Blackbaud\Resources\ConstituentPhoneTypeResource;
 use Blackbaud\Resources\ConstituentResource;
 use Blackbaud\Resources\EventResource;
 use Blackbaud\Resources\FundResource;
@@ -78,6 +81,11 @@ abstract class Blackbaud extends Connector
         return new ConstituentResource($this);
     }
 
+    public function constituentAddressType(): ConstituentAddressTypeResource
+    {
+        return new ConstituentAddressTypeResource($this);
+    }
+
     public function constituentCustomField(): ConstituentCustomFieldResource
     {
         return new ConstituentCustomFieldResource($this);
@@ -86,6 +94,16 @@ abstract class Blackbaud extends Connector
     public function constituentCustomFieldCategoryDetail(): ConstituentCustomFieldCategoryDetailResource
     {
         return new ConstituentCustomFieldCategoryDetailResource($this);
+    }
+
+    public function constituentEmailAddressType(): ConstituentEmailAddressTypeResource
+    {
+        return new ConstituentEmailAddressTypeResource($this);
+    }
+
+    public function constituentPhoneType(): ConstituentPhoneTypeResource
+    {
+        return new ConstituentPhoneTypeResource($this);
     }
 
     public function gift(): GiftResource
