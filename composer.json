@@ -10,7 +10,7 @@
         "laravel/pint": "^1.22",
         "pestphp/pest": "^3.8",
         "symfony/var-dumper": "^7.3",
-        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan": "^2.1.37",
         "rector/rector": "^2.0"
     },
     "minimum-stability": "stable",
