@@ -5,6 +5,7 @@ namespace Blackbaud\Resources;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Constituent\CreateConstituentAddress;
+use Blackbaud\Requests\Constituent\UpdateConstituentAddress;
 use Saloon\Http\BaseResource;
 
 class ConstituentAddressResource extends BaseResource
@@ -24,5 +25,21 @@ class ConstituentAddressResource extends BaseResource
         $response = $this->connector->send(new CreateConstituentAddress($properties))->array();
 
         return (int) $response['id'];
+    }
+
+    /**
+     * @param  array<string, mixed>  $properties
+     * @return true if the update is successful, otherwise it will throw an exception
+     *
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     *
+     * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=EditConstituentAddress List of available properties
+     */
+    public function update(int $id, array $properties): true
+    {
+        $this->connector->send(new UpdateConstituentAddress($id, $properties));
+
+        return true;
     }
 }

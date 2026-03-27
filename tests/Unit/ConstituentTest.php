@@ -26,3 +26,20 @@ it('can update constituent information', function () use ($client) {
         'last' => 'UpdatedLastName',
     ]))->toBeTrue();
 });
+
+it('can update constituent address', function () use ($client) {
+    expect($client->constituentAddress()->update(456, [
+        'address_lines' => '123 Main St',
+        'city' => 'Austin',
+        'state' => 'TX',
+        'postal_code' => '78701',
+    ]))->toBeTrue();
+});
+
+it('can update constituent phone', function () use ($client) {
+    expect($client->constituentPhone()->update(789, [
+        'number' => '555-0100',
+        'type' => 'Mobile',
+        'primary' => true,
+    ]))->toBeTrue();
+});

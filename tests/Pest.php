@@ -3,6 +3,8 @@
 use Blackbaud\Requests\Constituent\CreateConstituent;
 use Blackbaud\Requests\Constituent\GetConstituent;
 use Blackbaud\Requests\Constituent\UpdateConstituent;
+use Blackbaud\Requests\Constituent\UpdateConstituentAddress;
+use Blackbaud\Requests\Constituent\UpdateConstituentPhone;
 use Blackbaud\Requests\Event\CreateEvent;
 use Blackbaud\Requests\Event\GetEvent;
 use Blackbaud\Requests\Event\UpdateEvent;
@@ -22,6 +24,8 @@ MockClient::global([
     GetConstituent::class => MockResponse::fixture('constituent'),
     CreateConstituent::class => MockResponse::fixture('constituent-create'),
     UpdateConstituent::class => MockResponse::fixture('constituent-update'),
+    UpdateConstituentAddress::class => MockResponse::fixture('constituent-address-update'),
+    UpdateConstituentPhone::class => MockResponse::fixture('constituent-phone-update'),
     GetGift::class => MockResponse::fixture('gift'),
     CreateGift::class => MockResponse::fixture('gift-create'),
     UpdateGift::class => MockResponse::fixture('gift-update'),

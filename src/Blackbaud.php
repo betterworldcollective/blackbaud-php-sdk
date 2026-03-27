@@ -17,6 +17,7 @@ use Blackbaud\Resources\ConstituentAddressTypeResource;
 use Blackbaud\Resources\ConstituentCustomFieldCategoryDetailResource;
 use Blackbaud\Resources\ConstituentCustomFieldResource;
 use Blackbaud\Resources\ConstituentEmailAddressTypeResource;
+use Blackbaud\Resources\ConstituentPhoneResource;
 use Blackbaud\Resources\ConstituentPhoneTypeResource;
 use Blackbaud\Resources\ConstituentResource;
 use Blackbaud\Resources\EventResource;
@@ -105,6 +106,11 @@ abstract class Blackbaud extends Connector
     public function constituentEmailAddressType(): ConstituentEmailAddressTypeResource
     {
         return new ConstituentEmailAddressTypeResource($this);
+    }
+
+    public function constituentPhone(): ConstituentPhoneResource
+    {
+        return new ConstituentPhoneResource($this);
     }
 
     public function constituentPhoneType(): ConstituentPhoneTypeResource
