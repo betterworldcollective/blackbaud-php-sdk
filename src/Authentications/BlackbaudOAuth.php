@@ -32,7 +32,8 @@ class BlackbaudOAuth extends Blackbaud
     {
         return OAuthConfig::make()
             ->setTokenEndpoint('https://oauth2.sky.blackbaud.com/token')
-            ->setAuthorizeEndpoint('https://app.blackbaud.com/oauth/authorize');
+            ->setAuthorizeEndpoint('https://app.blackbaud.com/oauth/authorize')
+            ->setAllowBaseUrlOverride();
     }
 
     public static function getAuthUrl(string $clientId, string $clientSecret, string $redirectUri): string
