@@ -1,6 +1,7 @@
 <?php
 
 use Blackbaud\Requests\Constituent\CreateConstituent;
+use Blackbaud\Requests\Constituent\CreateConstituentPhone;
 use Blackbaud\Requests\Constituent\GetConstituent;
 use Blackbaud\Requests\Constituent\UpdateConstituent;
 use Blackbaud\Requests\Constituent\UpdateConstituentAddress;
@@ -25,6 +26,7 @@ MockClient::global([
     CreateConstituent::class => MockResponse::fixture('constituent-create'),
     UpdateConstituent::class => MockResponse::fixture('constituent-update'),
     UpdateConstituentAddress::class => MockResponse::fixture('constituent-address-update'),
+    CreateConstituentPhone::class => MockResponse::fixture('constituent-phone-create'),
     UpdateConstituentPhone::class => MockResponse::fixture('constituent-phone-update'),
     GetGift::class => MockResponse::fixture('gift'),
     CreateGift::class => MockResponse::fixture('gift-create'),

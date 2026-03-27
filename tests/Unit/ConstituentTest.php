@@ -36,6 +36,16 @@ it('can update constituent address', function () use ($client) {
     ]))->toBeTrue();
 });
 
+it('can create constituent phone', function () use ($client) {
+    $newlyCreatedId = $client->constituentPhone()->create([
+        'constituent_id' => '280',
+        'number' => '555-0100',
+        'type' => 'Mobile',
+    ]);
+
+    expect($newlyCreatedId)->toBe(143);
+});
+
 it('can update constituent phone', function () use ($client) {
     expect($client->constituentPhone()->update(789, [
         'number' => '555-0100',
