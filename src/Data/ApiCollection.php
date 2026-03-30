@@ -13,7 +13,7 @@ class ApiCollection
     public array $value = [];
 
     /**
-     * @param  array<array<string, array<string, float>|bool|string|null>>  $data
+     * @param  array<array<string, array<string, float>|bool|int|string|null>>  $data
      * @param  class-string<T>  $dataClass
      */
     public function __construct(
@@ -36,7 +36,7 @@ class ApiCollection
     /**
      * @template TData of BaseData
      *
-     * @param  array<array<string, array<string, float>|bool|string|null>>  $data
+     * @param  array<array<string, array<string, float>|bool|int|string|null>>  $data
      * @param  class-string<TData>  $dataClass
      * @return ApiCollection<TData>
      */
