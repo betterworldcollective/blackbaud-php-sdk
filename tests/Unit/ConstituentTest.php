@@ -1,7 +1,9 @@
 <?php
 
 use Blackbaud\Blackbaud;
+use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\Constituent\Constituent;
+use Blackbaud\Data\Constituent\ConstituentSearchResult;
 use Blackbaud\Enums\ConstituentType;
 
 $client = Blackbaud::oauth('client-id', 'client-secret', 'redirect-url', 'subscription-key');
@@ -52,4 +54,18 @@ it('can update constituent phone', function () use ($client) {
         'type' => 'Mobile',
         'primary' => true,
     ]))->toBeTrue();
+});
+
+it('can search for constituents', function () use ($client) {
+    $results = $client->constituent()->search('Hernandez');
+
+    expect($results)->toBeInstanceOf(ApiCollection::class)
+        ->and($results->count)->toBe(2)
+        ->and($results->value)->toHaveCount(2)
+        ->and($results->value[0])->toBeInstanceOf(ConstituentSearchResult::class)
+        ->and($results->value[0]->id)->toBe('280')
+        ->and($results->value[0]->name)->toBe('Dr. Robert C. Hernandez')
+        ->and($results->value[0]->primary_email)->toBe('robertcarloshernandez@gmail.com')
+        ->and($results->value[1]->id)->toBe('412')
+        ->and($results->value[1]->last_name)->toBe('Hernandez');
 });

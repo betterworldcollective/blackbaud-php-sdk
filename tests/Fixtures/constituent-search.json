@@ -1,0 +1,45 @@
+{
+  "statusCode" : 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Wed, 24 May 2023 06:23:45 GMT",
+    "Server": "Kestrel",
+    "Transfer-Encoding": "chunked",
+    "Request-Context": "appId=cid-v1:39afb11d-2dd4-4500-bcd3-01c7ce6a1b18"
+  },
+  "data": {
+    "count": 2,
+    "value": [
+      {
+        "id": "280",
+        "lookup_id": "96",
+        "name": "Dr. Robert C. Hernandez",
+        "first_name": "Robert",
+        "last_name": "Hernandez",
+        "middle_name": "Carlos",
+        "preferred_name": "Bob",
+        "title": "Dr.",
+        "gender": "Male",
+        "address": "410 17th Street",
+        "address_block": "410 17th Street\r\nDenver, CO  80202-4402",
+        "address_city_state": "Denver, CO",
+        "address_post_code": "80202-4402",
+        "primary_email": "robertcarloshernandez@gmail.com",
+        "inactive": false
+      },
+      {
+        "id": "412",
+        "lookup_id": "142",
+        "name": "Maria Hernandez",
+        "first_name": "Maria",
+        "last_name": "Hernandez",
+        "gender": "Female",
+        "address": "200 Oak Lane",
+        "address_city_state": "Austin, TX",
+        "address_post_code": "78701",
+        "primary_email": "maria.hernandez@example.com",
+        "inactive": false
+      }
+    ]
+  }
+}

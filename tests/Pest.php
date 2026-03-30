@@ -3,6 +3,7 @@
 use Blackbaud\Requests\Constituent\CreateConstituent;
 use Blackbaud\Requests\Constituent\CreateConstituentPhone;
 use Blackbaud\Requests\Constituent\GetConstituent;
+use Blackbaud\Requests\Constituent\SearchConstituent;
 use Blackbaud\Requests\Constituent\UpdateConstituent;
 use Blackbaud\Requests\Constituent\UpdateConstituentAddress;
 use Blackbaud\Requests\Constituent\UpdateConstituentPhone;
@@ -23,6 +24,7 @@ Config::preventStrayRequests();
 
 MockClient::global([
     GetConstituent::class => MockResponse::fixture('constituent'),
+    SearchConstituent::class => MockResponse::fixture('constituent-search'),
     CreateConstituent::class => MockResponse::fixture('constituent-create'),
     UpdateConstituent::class => MockResponse::fixture('constituent-update'),
     UpdateConstituentAddress::class => MockResponse::fixture('constituent-address-update'),
