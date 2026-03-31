@@ -22,6 +22,7 @@ use Blackbaud\Resources\ConstituentPhoneTypeResource;
 use Blackbaud\Resources\ConstituentResource;
 use Blackbaud\Resources\EventResource;
 use Blackbaud\Resources\FundResource;
+use Blackbaud\Resources\GiftBatchResource;
 use Blackbaud\Resources\GiftCustomFieldCategoryDetailResource;
 use Blackbaud\Resources\GiftCustomFieldResource;
 use Blackbaud\Resources\GiftResource;
@@ -121,6 +122,11 @@ abstract class Blackbaud extends Connector
     public function gift(): GiftResource
     {
         return new GiftResource($this);
+    }
+
+    public function giftBatch(): GiftBatchResource
+    {
+        return new GiftBatchResource($this);
     }
 
     public function giftCustomField(): GiftCustomFieldResource
