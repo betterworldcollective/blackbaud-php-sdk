@@ -2,14 +2,30 @@
 
 namespace Blackbaud\Resources;
 
+use Blackbaud\Data\ApiCollection;
+use Blackbaud\Data\Constituent\Address;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Constituent\CreateConstituentAddress;
+use Blackbaud\Requests\Constituent\ListConstituentAddresses;
 use Blackbaud\Requests\Constituent\UpdateConstituentAddress;
 use Saloon\Http\BaseResource;
 
 class ConstituentAddressResource extends BaseResource
 {
+    /**
+     * @return ApiCollection<Address>
+     *
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     *
+     * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=ListConstituentAddressesByConstituent
+     */
+    public function list(int $constituentId): ApiCollection
+    {
+        return $this->connector->send(new ListConstituentAddresses($constituentId))->dto();
+    }
+
     /**
      * @param  array<string, mixed>  $properties
      * @return int The ID of the newly created constituent address returned by the API response
