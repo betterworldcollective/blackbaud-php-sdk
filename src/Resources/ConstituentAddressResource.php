@@ -5,6 +5,7 @@ namespace Blackbaud\Resources;
 use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\Constituent\Address;
 use Blackbaud\Exceptions\BadRequestException;
+use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Constituent\CreateConstituentAddress;
 use Blackbaud\Requests\Constituent\ListConstituentAddresses;
@@ -17,13 +18,22 @@ class ConstituentAddressResource extends BaseResource
      * @return ApiCollection<Address>
      *
      * @throws BadRequestException
+     * @throws InvalidDataException
      * @throws UnauthorizedException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=ListConstituentAddressesByConstituent
      */
     public function list(int $constituentId): ApiCollection
     {
-        return $this->connector->send(new ListConstituentAddresses($constituentId))->dto();
+        $addresses = $this->connector->send(
+            new ListConstituentAddresses($constituentId)
+        )->dto();
+
+        if (! $addresses instanceof ApiCollection) {
+            throw new InvalidDataException('Invalid data found.');
+        }
+
+        return $addresses;
     }
 
     /**
