@@ -16,7 +16,7 @@ use Carbon\CarbonImmutable;
  *
  * @phpstan-type ConstituentDataResponse array{
  *     id: string,
- *     last: string,
+ *     last?: string,
  *     type: string,
  *     age?: int|null,
  *     name?: string,
@@ -67,7 +67,7 @@ class Constituent extends BaseData
 {
     public function __construct(
         public string $id,
-        public string $last,
+        public ?string $last,
         public ConstituentType $type,
         public ?int $age = null,
         public ?string $name = null,
@@ -127,7 +127,7 @@ class Constituent extends BaseData
 
         return new self(
             id: $data['id'],
-            last: $data['last'],
+            last: $data['last'] ?? null,
             type: ConstituentType::from(strtolower($data['type'])),
             age: $data['age'] ?? null,
             name: $data['name'] ?? null,

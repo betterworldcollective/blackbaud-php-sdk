@@ -14,6 +14,28 @@ it('can retrieve constituent information', function () use ($client) {
     expect($constituent)->toBeInstanceOf(Constituent::class)->and($constituent->id)->toBe('280');
 });
 
+it('hydrates an organization constituent that has no last field', function () {
+    $constituent = Constituent::from([
+        'id' => '999',
+        'type' => 'Organization',
+        'name' => 'Acme Foundation',
+        'gives_anonymously' => false,
+        'inactive' => false,
+        'is_constituent' => true,
+        'deceased' => false,
+        'is_memorial' => false,
+        'is_solicitor' => false,
+        'no_valid_address' => false,
+        'requests_no_email' => false,
+    ]);
+
+    expect($constituent)->toBeInstanceOf(Constituent::class)
+        ->and($constituent->id)->toBe('999')
+        ->and($constituent->type)->toBe(ConstituentType::Organization)
+        ->and($constituent->name)->toBe('Acme Foundation')
+        ->and($constituent->last)->toBeNull();
+});
+
 it('can create constituent information', function () use ($client) {
     $newlyCreatedId = $client->constituent()->create([
         'last' => 'LastName',
