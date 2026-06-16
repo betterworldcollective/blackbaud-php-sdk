@@ -157,7 +157,7 @@ class Constituent extends BaseData
             parent_corporation_id: $data['parent_corporation_id'] ?? null,
             gives_anonymously: $data['gives_anonymously'] ?? false,
             inactive: $data['inactive'] ?? false,
-            is_constituent: $data['is_constituent'] ?? false,
+            is_constituent: $data['is_constituent'] ?? true,
             deceased: $data['deceased'] ?? false,
             is_memorial: $data['is_memorial'] ?? false,
             is_solicitor: $data['is_solicitor'] ?? false,
