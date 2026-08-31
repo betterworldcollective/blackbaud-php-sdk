@@ -7,10 +7,12 @@ use Blackbaud\Data\Fundraiser\Fund;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Fundraising\GetAllFund;
 use Blackbaud\Requests\Fundraising\GetFund;
 use Carbon\CarbonImmutable;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class FundResource extends BaseResource
@@ -21,6 +23,8 @@ class FundResource extends BaseResource
      * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function all(
         ?CarbonImmutable $dateAdded = null,
@@ -52,6 +56,8 @@ class FundResource extends BaseResource
      * @throws ObjectNotFoundException
      * @throws UnauthorizedException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function get(int $id): Fund
     {

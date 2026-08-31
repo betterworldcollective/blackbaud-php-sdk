@@ -5,6 +5,7 @@ namespace Blackbaud\Resources;
 use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\CustomField\CustomField;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Requests\Constituent\CreateConstituentCustomField;
 use Blackbaud\Requests\Constituent\GetAllConstituentCustomField;
 use Blackbaud\Requests\Constituent\GetConstituentCustomField;
@@ -12,6 +13,7 @@ use Blackbaud\Requests\Constituent\UpdateConstituentCustomField;
 use Carbon\CarbonImmutable;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class ConstituentCustomFieldResource extends BaseResource
@@ -22,6 +24,8 @@ class ConstituentCustomFieldResource extends BaseResource
      * @throws RequestException
      * @throws InvalidDataException
      * @throws FatalRequestException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function all(
         ?CarbonImmutable $dateAdded = null,
@@ -55,6 +59,8 @@ class ConstituentCustomFieldResource extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function get(int $id): ApiCollection
     {
@@ -73,6 +79,8 @@ class ConstituentCustomFieldResource extends BaseResource
      *
      * @throws FatalRequestException
      * @throws RequestException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=CreateConstituentCustomField List of available properties
      */
@@ -90,6 +98,8 @@ class ConstituentCustomFieldResource extends BaseResource
      *
      * @throws FatalRequestException
      * @throws RequestException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=EditConstituentCustomField List of available properties
      */

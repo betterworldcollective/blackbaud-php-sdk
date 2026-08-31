@@ -7,10 +7,12 @@ use Blackbaud\Enums\Module;
 use Blackbaud\Enums\Product;
 use Blackbaud\Enums\QueryTypeId;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Requests\Query\GetNode;
 use Blackbaud\Requests\Query\GetRootNode;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class QueryResource extends BaseResource
@@ -19,6 +21,8 @@ class QueryResource extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function getRootNode(QueryTypeId $query_type_id, Product $product, Module $module): FieldNodes
     {
@@ -35,6 +39,8 @@ class QueryResource extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function getNode(
         int $id,

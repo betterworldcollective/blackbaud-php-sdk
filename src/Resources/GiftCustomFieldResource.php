@@ -5,11 +5,13 @@ namespace Blackbaud\Resources;
 use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\CustomField\CustomField;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Requests\Gift\CreateGiftCustomField;
 use Blackbaud\Requests\Gift\GetGiftCustomField;
 use Blackbaud\Requests\Gift\UpdateGiftCustomField;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class GiftCustomFieldResource extends BaseResource
@@ -20,6 +22,8 @@ class GiftCustomFieldResource extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function get(int $id): ApiCollection
     {
@@ -38,6 +42,8 @@ class GiftCustomFieldResource extends BaseResource
      *
      * @throws FatalRequestException
      * @throws RequestException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=58bdd5edd7dcde06046081d6&operation=CreateGiftCustomField List of available properties
      */
@@ -55,6 +61,8 @@ class GiftCustomFieldResource extends BaseResource
      *
      * @throws FatalRequestException
      * @throws RequestException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=58bdd5edd7dcde06046081d6&operation=EditGiftCustomField List of available properties
      */

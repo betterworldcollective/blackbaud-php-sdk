@@ -8,11 +8,13 @@ use Blackbaud\Data\Constituent\ConstituentSearchResult;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Constituent\CreateConstituent;
 use Blackbaud\Requests\Constituent\GetConstituent;
 use Blackbaud\Requests\Constituent\SearchConstituent;
 use Blackbaud\Requests\Constituent\UpdateConstituent;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class ConstituentResource extends BaseResource
@@ -21,6 +23,8 @@ class ConstituentResource extends BaseResource
      * @throws ObjectNotFoundException
      * @throws UnauthorizedException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function get(int $id): Constituent
     {
@@ -39,6 +43,8 @@ class ConstituentResource extends BaseResource
      * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=SearchConstituent
      */
@@ -76,6 +82,8 @@ class ConstituentResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=CreateConstituent List of available properties
      */
@@ -93,6 +101,8 @@ class ConstituentResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=EditConstituent List of available properties
      */

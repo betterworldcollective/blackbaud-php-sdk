@@ -6,10 +6,12 @@ use Blackbaud\Data\Gift\Gift;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Gift\CreateGift;
 use Blackbaud\Requests\Gift\GetGift;
 use Blackbaud\Requests\Gift\UpdateGift;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class GiftResource extends BaseResource
@@ -18,6 +20,8 @@ class GiftResource extends BaseResource
      * @throws ObjectNotFoundException
      * @throws UnauthorizedException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function get(int $id): Gift
     {
@@ -36,6 +40,8 @@ class GiftResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=58bdd5edd7dcde06046081d6&operation=CreateGift List of available properties
      */
@@ -53,6 +59,8 @@ class GiftResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=58bdd5edd7dcde06046081d6&operation=EditGift List of available properties
      */

@@ -6,10 +6,12 @@ use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\Constituent\Address;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Constituent\CreateConstituentAddress;
 use Blackbaud\Requests\Constituent\ListConstituentAddresses;
 use Blackbaud\Requests\Constituent\UpdateConstituentAddress;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class ConstituentAddressResource extends BaseResource
@@ -20,6 +22,8 @@ class ConstituentAddressResource extends BaseResource
      * @throws BadRequestException
      * @throws InvalidDataException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=ListConstituentAddressesByConstituent
      */
@@ -42,6 +46,8 @@ class ConstituentAddressResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=CreateConstituentAddress List of available properties
      */
@@ -59,6 +65,8 @@ class ConstituentAddressResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=56b76470069a0509c8f1c5b3&operation=EditConstituentAddress List of available properties
      */

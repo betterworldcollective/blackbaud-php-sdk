@@ -3,9 +3,11 @@
 namespace Blackbaud\Resources;
 
 use Blackbaud\Exceptions\BadRequestException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\GiftBatch\CreateGiftBatch;
 use Blackbaud\Requests\GiftBatch\CreateGiftBatchGifts;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class GiftBatchResource extends BaseResource
@@ -16,6 +18,8 @@ class GiftBatchResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=gift-batch&operation=CreateBatch List of available properties
      */
@@ -34,6 +38,8 @@ class GiftBatchResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=58bdd5edd7dcde06046081d6&operation=AddGiftsToBatch List of available properties
      */

@@ -161,6 +161,8 @@ abstract class Blackbaud extends Connector
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function create(Resource $resource, array $properties): int
     {
@@ -171,6 +173,8 @@ abstract class Blackbaud extends Connector
      * @throws ObjectNotFoundException
      * @throws UnauthorizedException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function get(Resource $resource, int $id): Gift|Event|Constituent
     {
@@ -182,6 +186,8 @@ abstract class Blackbaud extends Connector
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function update(Resource $resource, int $id, array $properties): true
     {
