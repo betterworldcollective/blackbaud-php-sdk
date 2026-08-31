@@ -6,10 +6,12 @@ use Blackbaud\Data\Event\Event;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Event\CreateEvent;
 use Blackbaud\Requests\Event\GetEvent;
 use Blackbaud\Requests\Event\UpdateEvent;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class EventResource extends BaseResource
@@ -18,6 +20,8 @@ class EventResource extends BaseResource
      * @throws ObjectNotFoundException
      * @throws UnauthorizedException
      * @throws InvalidDataException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function get(int $id): Event
     {
@@ -36,6 +40,8 @@ class EventResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=event&operation=CreateEvent List of available properties
      */
@@ -53,6 +59,8 @@ class EventResource extends BaseResource
      *
      * @throws BadRequestException
      * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      *
      * @see https://developer.sky.blackbaud.com/api#api=event&operation=EditEvent List of available properties
      */

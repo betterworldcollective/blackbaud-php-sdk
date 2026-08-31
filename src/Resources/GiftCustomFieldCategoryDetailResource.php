@@ -5,9 +5,11 @@ namespace Blackbaud\Resources;
 use Blackbaud\Data\ApiCollection;
 use Blackbaud\Data\CustomField\CustomFieldCategoryDetail;
 use Blackbaud\Exceptions\InvalidDataException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Requests\Gift\GetAllGiftCustomFieldCategoryDetail;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
 class GiftCustomFieldCategoryDetailResource extends BaseResource
@@ -18,6 +20,8 @@ class GiftCustomFieldCategoryDetailResource extends BaseResource
      * @throws RequestException
      * @throws InvalidDataException
      * @throws FatalRequestException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
      */
     public function all(): ApiCollection
     {
