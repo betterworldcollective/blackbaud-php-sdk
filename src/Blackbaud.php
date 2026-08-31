@@ -11,6 +11,7 @@ use Blackbaud\Enums\Resource;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
+use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Resources\ConstituentAddressResource;
 use Blackbaud\Resources\ConstituentAddressTypeResource;
@@ -29,6 +30,7 @@ use Blackbaud\Resources\GiftResource;
 use Blackbaud\Resources\QueryResource;
 use Blackbaud\Responses\BlackbaudResponse;
 use DateTimeImmutable;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\Auth\AccessTokenAuthenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
@@ -197,12 +199,37 @@ abstract class Blackbaud extends Connector
 
     public function getRequestException(Response $response, ?Throwable $senderException): ?Throwable
     {
-        return match ($response->status()) {
+        $status = $response->status();
+
+        // The SKY API reports an exhausted quota as a 403 carrying Retry-After instead of a 429. A 403
+        // without that header is a genuine authorization failure and must stay non-retryable.
+        if ($status === 403 && $this->hasRetryAfter($response)) {
+            return new QuotaExceededException($response, previous: $senderException);
+        }
+
+        return match ($status) {
             401 => new UnauthorizedException($response->json()['message']),
             404 => new ObjectNotFoundException,
+            429 => new TooManyRequestsException($response, previous: $senderException),
             400 => new BadRequestException($response->json()),
             default => $senderException,
         };
+    }
+
+    /**
+     * Whether the response tells us when the request may be retried.
+     *
+     * @see https://developer.blackbaud.com/skyapi/docs/in-depth-topics/api-request-throttling
+     */
+    private function hasRetryAfter(Response $response): bool
+    {
+        $retryAfter = $response->header('Retry-After');
+
+        if (is_array($retryAfter)) {
+            $retryAfter = $retryAfter[0] ?? null;
+        }
+
+        return is_string($retryAfter) && trim($retryAfter) !== '';
     }
 
     public function authenticateWithToken(string $token, ?string $refreshToken = null, ?DateTimeImmutable $expiresAt = null): static

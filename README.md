@@ -88,6 +88,34 @@ $client->gift()->get(1);
 $client->event()->get(1);
 ```
 
+## Rate limits and quota
+
+The SKY API throttles bursts with `429 Too Many Requests` and signals an exhausted daily quota with a `403`
+that carries a `Retry-After` header. Both map to Saloon's rate limit exception, so one `catch` covers them:
+
+| Response | Exception |
+| --- | --- |
+| `429` | `Saloon\Exceptions\Request\Statuses\TooManyRequestsException` |
+| `403` with `Retry-After` | `Blackbaud\Exceptions\QuotaExceededException` (extends the above) |
+| `403` without `Retry-After` | unchanged — a plain authorization failure, not retryable |
+
+```php
+use Blackbaud\Exceptions\QuotaExceededException;
+use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
+
+try {
+    $client->giftCustomField()->create($properties);
+} catch (QuotaExceededException $e) {
+    // Quota is spent for the period; Retry-After is typically the remainder of the day.
+    $retryAfter = $e->getResponse()->header('Retry-After');
+} catch (TooManyRequestsException $e) {
+    // Burst limit; retry once Retry-After seconds have passed.
+    $retryAfter = $e->getResponse()->header('Retry-After');
+}
+```
+
+See [Blackbaud's throttling docs](https://developer.blackbaud.com/skyapi/docs/in-depth-topics/api-request-throttling).
+
 ## Testing
 
 ```bash
