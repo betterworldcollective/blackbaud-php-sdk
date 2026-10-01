@@ -13,6 +13,7 @@ use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
 use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
+use Blackbaud\Resources\AppealResource;
 use Blackbaud\Resources\ConstituentAddressResource;
 use Blackbaud\Resources\ConstituentAddressTypeResource;
 use Blackbaud\Resources\ConstituentCustomFieldCategoryDetailResource;
@@ -27,6 +28,7 @@ use Blackbaud\Resources\GiftBatchResource;
 use Blackbaud\Resources\GiftCustomFieldCategoryDetailResource;
 use Blackbaud\Resources\GiftCustomFieldResource;
 use Blackbaud\Resources\GiftResource;
+use Blackbaud\Resources\PackageResource;
 use Blackbaud\Resources\QueryResource;
 use Blackbaud\Responses\BlackbaudResponse;
 use DateTimeImmutable;
@@ -154,6 +156,16 @@ abstract class Blackbaud extends Connector
     public function fund(): FundResource
     {
         return new FundResource($this);
+    }
+
+    public function appeal(): AppealResource
+    {
+        return new AppealResource($this);
+    }
+
+    public function package(): PackageResource
+    {
+        return new PackageResource($this);
     }
 
     /**
