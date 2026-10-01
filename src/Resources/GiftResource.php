@@ -3,14 +3,17 @@
 namespace Blackbaud\Resources;
 
 use Blackbaud\Data\Gift\Gift;
+use Blackbaud\Enums\GiftStatus;
 use Blackbaud\Exceptions\BadRequestException;
 use Blackbaud\Exceptions\InvalidDataException;
 use Blackbaud\Exceptions\ObjectNotFoundException;
 use Blackbaud\Exceptions\QuotaExceededException;
 use Blackbaud\Exceptions\UnauthorizedException;
 use Blackbaud\Requests\Gift\CreateGift;
+use Blackbaud\Requests\Gift\EditRecurringGiftStatus;
 use Blackbaud\Requests\Gift\GetGift;
 use Blackbaud\Requests\Gift\UpdateGift;
+use Saloon\Exceptions\Request\RequestException;
 use Saloon\Exceptions\Request\Statuses\TooManyRequestsException;
 use Saloon\Http\BaseResource;
 
@@ -67,6 +70,21 @@ class GiftResource extends BaseResource
     public function update(int $id, array $properties): true
     {
         $this->connector->send(new UpdateGift($id, $properties));
+
+        return true;
+    }
+
+    /**
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws ObjectNotFoundException
+     * @throws TooManyRequestsException
+     * @throws QuotaExceededException
+     * @throws RequestException
+     */
+    public function editRecurringGiftStatus(int $id, GiftStatus $status): true
+    {
+        $this->connector->send(new EditRecurringGiftStatus($id, $status));
 
         return true;
     }
