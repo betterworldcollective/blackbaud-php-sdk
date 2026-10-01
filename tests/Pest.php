@@ -10,6 +10,10 @@ use Blackbaud\Requests\Constituent\UpdateConstituentPhone;
 use Blackbaud\Requests\Event\CreateEvent;
 use Blackbaud\Requests\Event\GetEvent;
 use Blackbaud\Requests\Event\UpdateEvent;
+use Blackbaud\Requests\Fundraising\GetAllAppeal;
+use Blackbaud\Requests\Fundraising\GetAllPackage;
+use Blackbaud\Requests\Fundraising\GetAppeal;
+use Blackbaud\Requests\Fundraising\GetPackage;
 use Blackbaud\Requests\Gift\CreateGift;
 use Blackbaud\Requests\Gift\GetGift;
 use Blackbaud\Requests\Gift\UpdateGift;
@@ -36,6 +40,10 @@ MockClient::global([
     GetEvent::class => MockResponse::fixture('event'),
     CreateEvent::class => MockResponse::fixture('event-create'),
     UpdateEvent::class => MockResponse::fixture('event-update'),
+    GetAppeal::class => MockResponse::fixture('appeal'),
+    GetAllAppeal::class => MockResponse::fixture('appeals'),
+    GetPackage::class => MockResponse::fixture('package'),
+    GetAllPackage::class => MockResponse::fixture('packages'),
 ]);
 
 /*

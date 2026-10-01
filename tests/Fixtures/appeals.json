@@ -1,0 +1,30 @@
+{
+  "statusCode" : 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "data": {
+    "count": 2,
+    "next_link": "https://api.sky.blackbaud.com/fundraising/v1/appeals?offset=2&limit=2",
+    "value": [
+      {
+        "id": "12",
+        "category": "Annual",
+        "date_added": "2025-01-14T10:21:44.0000000-05:00",
+        "date_modified": "2025-06-02T08:15:03.0000000-05:00",
+        "description": "Spring Appeal 2025",
+        "end_date": "2025-06-30T00:00:00",
+        "goal": { "value": 50000.0 },
+        "inactive": false,
+        "lookup_id": "SPRING25",
+        "start_date": "2025-03-01T00:00:00"
+      },
+      {
+        "id": "13",
+        "description": "Year End Appeal 2025",
+        "inactive": true,
+        "lookup_id": "YE25"
+      }
+    ]
+  }
+}
